@@ -1,0 +1,123 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Roof Replacement",
+      "type": "outdoor",
+      "photo": "url/to/roof-replacement-photo.jpg",
+      "description": "Comprehensive roof replacement services to ensure durability and weather resistance."
+    },
+    {
+      "id": 2,
+      "name": "Window Replacement",
+      "type": "outdoor",
+      "photo": "url/to/window-replacement-photo.jpg",
+      "description": "Energy-efficient window replacement to improve insulation and reduce energy costs."
+    },
+    {
+      "id": 3,
+      "name": "Foundation Repair",
+      "type": "outdoor",
+      "photo": "url/to/foundation-repair-photo.jpg",
+      "description": "Professional foundation repair services to stabilize and secure your home."
+    },
+    {
+      "id": 4,
+      "name": "Crawl Space Repair",
+      "type": "outdoor",
+      "photo": "url/to/crawl-space-repair-photo.jpg",
+      "description": "Crawl space repair solutions to enhance structural integrity and prevent moisture issues."
+    },
+    {
+      "id": 5,
+      "name": "Fence",
+      "type": "outdoor",
+      "photo": "url/to/fence-photo.jpg",
+      "description": "High-quality fencing services for privacy and protection around your property."
+    },
+    {
+      "id": 6,
+      "name": "Deck",
+      "type": "outdoor",
+      "photo": "url/to/deck-photo.jpg",
+      "description": "Custom deck construction to extend your living space into the outdoors."
+    },
+    {
+      "id": 7,
+      "name": "Shower Conversion",
+      "type": "indoor",
+      "photo": "url/to/shower-conversion-photo.jpg",
+      "description": "Transform your bathroom with modern shower conversion solutions."
+    },
+    {
+      "id": 8,
+      "name": "Tub Conversion",
+      "type": "indoor",
+      "photo": "url/to/tub-conversion-photo.jpg",
+      "description": "Convert existing tubs to enhance usability and update your bathroom's style."
+    },
+    {
+      "id": 9,
+      "name": "Walk-in Tub",
+      "type": "indoor",
+      "photo": "url/to/walk-in-tub-photo.jpg",
+      "description": "Walk-in tubs for safety, accessibility, and relaxation in your bathroom."
+    },
+    {
+      "id": 10,
+      "name": "Kitchen Refacing",
+      "type": "indoor",
+      "photo": "url/to/kitchen-refacing-photo.jpg",
+      "description": "Give your kitchen a new look with our professional refacing services."
+    },
+    {
+      "id": 11,
+      "name": "Basement Waterproofing",
+      "type": "indoor",
+      "photo": "url/to/basement-waterproofing-photo.jpg",
+      "description": "Prevent leaks and water damage with expert basement waterproofing solutions."
+    }
+  ],
+  "contractors": [
+    {
+      "id": 1,
+      "name": "John's Roofing Co.",
+      "address": "123 Main St, Springfield",
+      "zip": "12345",
+      "state": "IL",
+      "services": [1, 3, 4] 
+    },
+    {
+      "id": 2,
+      "name": "Window Wizards",
+      "address": "456 Elm St, Riverdale",
+      "zip": "12345",
+      "state": "IL",
+      "services": [2, 5] 
+    },
+    {
+      "id": 3,
+      "name": "Basement Pros",
+      "address": "789 Oak St, Metropolis",
+      "zip": "12345",
+      "state": "IL",
+      "services": [3, 11] 
+    },
+    {
+      "id": 4,
+      "name": "Deck Masters",
+      "address": "321 Pine St, Smallville",
+      "zip": "20234",
+      "state": "TX",
+      "services": [6]  
+    },
+    {
+      "id": 5,
+      "name": "Bathroom Innovations",
+      "address": "654 Maple St, Gotham",
+      "zip": "12345",
+      "state": "IL",
+      "services": [7, 8, 9] 
+    }
+  ]
+}
