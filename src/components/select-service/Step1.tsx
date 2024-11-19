@@ -151,7 +151,7 @@ const Step1: React.FC<Step1Props> = ({ onNext }) => {
 
           <button
             type="submit"
-            className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-secondary"
+            className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
           >
             Continue
           </button>

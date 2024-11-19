@@ -1,168 +1,97 @@
-import React, { useEffect } from 'react';
-import KeenSlider, { KeenSliderInstance } from 'keen-slider';
-import 'keen-slider/keen-slider.min.css';
+import React from 'react';
+import { cn } from "@/lib/utils";
+import Marquee from "./ui/marquee";
 
-const Testimonials: React.FC = () => {
-  let slider: KeenSliderInstance | null = null;
+interface Review {
+  name: string;
+  username: string;
+  body: string;
+  img: string;
+}
 
-  useEffect(() => {
-    const keenSliderActive = document.getElementById('keen-slider-active');
-    const keenSliderCount = document.getElementById('keen-slider-count');
+const reviews: Review[] = [
+  {
+    name: "Jack",
+    username: "",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Jill",
+    username: "",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+  {
+    name: "John",
+    username: "",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/john",
+  },
+  {
+    name: "Jane",
+    username: "",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jane",
+  },
+  {
+    name: "Jenny",
+    username: "",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jenny",
+  },
+  {
+    name: "James",
+    username: "",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+];
 
-    slider = new KeenSlider('#keen-slider', {
-      loop: true,
-      defaultAnimation: {
-        duration: 750,
-      },
-      slides: {
-        origin: 'center',
-        perView: 1,
-        spacing: 16,
-      },
-      breakpoints: {
-        '(min-width: 640px)': {
-          slides: {
-            origin: 'center',
-            perView: 1.5,
-            spacing: 16,
-          },
-        },
-        '(min-width: 768px)': {
-          slides: {
-            origin: 'center',
-            perView: 1.75,
-            spacing: 16,
-          },
-        },
-        '(min-width: 1024px)': {
-          slides: {
-            origin: 'center',
-            perView: 3,
-            spacing: 16,
-          },
-        },
-      },
-      created(s) {
-        if (keenSliderActive && keenSliderCount) {
-          s.slides[s.track.details.rel].classList.remove('opacity-40');
-          keenSliderActive.innerText = (s.track.details.rel + 1).toString();
-          keenSliderCount.innerText = s.slides.length.toString();
-        }
-      },
-      slideChanged(s) {
-        s.slides.forEach((slide) => slide.classList.add('opacity-40'));
-        s.slides[s.track.details.rel].classList.remove('opacity-40');
-        if (keenSliderActive) {
-          keenSliderActive.innerText = (s.track.details.rel + 1).toString();
-        }
-      },
-    });
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
 
-    const keenSliderPrevious = document.getElementById('keen-slider-previous');
-    const keenSliderNext = document.getElementById('keen-slider-next');
-
-    keenSliderPrevious?.addEventListener('click', () => slider?.prev());
-    keenSliderNext?.addEventListener('click', () => slider?.next());
-
-    return () => {
-      slider?.destroy();
-    };
-  }, []);
-
+const ReviewCard: React.FC<Review> = ({ img, name, username, body }) => {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Read trusted reviews from our customers
-        </h2>
-
-        <div className="mt-8">
-          <div id="keen-slider" className="keen-slider">
-            <div className="keen-slider__slide opacity-40 transition-opacity duration-500">
-              <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-                <div className="flex items-center gap-4">
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                    className="size-14 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="flex justify-center gap-0.5 text-green-500">
-                      {Array(5).fill("").map((_, index) => (
-                        <svg
-                          key={index}
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="size-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <p className="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-gray-700">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                  accusamus error officiis atque voluptates magnam!
-                </p>
-              </blockquote>
-            </div>
-
-            {/* Additional slides can be placed here */}
-
-          </div>
-
-          <div className="mt-6 flex items-center justify-center gap-4">
-            <button
-              aria-label="Previous slide"
-              id="keen-slider-previous"
-              className="text-gray-600 transition-colors hover:text-gray-900"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-
-            <p className="w-16 text-center text-sm text-gray-700">
-              <span id="keen-slider-active"></span>
-              /
-              <span id="keen-slider-count"></span>
-            </p>
-
-            <button
-              aria-label="Next slide"
-              id="keen-slider-next"
-              className="text-gray-600 transition-colors hover:text-gray-900"
-            >
-              <svg
-                className="size-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 5l7 7-7 7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-          </div>
+    <figure
+      className={cn(
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+      )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium dark:text-white">
+            {name}
+          </figcaption>
+          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-    </section>
+      <blockquote className="mt-2 text-sm">{body}</blockquote>
+    </figure>
+  );
+};
+
+const Testimonials: React.FC = () => {
+  return (
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {firstRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {secondRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+    </div>
   );
 };
 

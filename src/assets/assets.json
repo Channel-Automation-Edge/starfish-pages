@@ -4,77 +4,77 @@
       "id": 1,
       "name": "Roof Replacement",
       "type": "outdoor",
-      "photo": "url/to/roof-replacement-photo.jpg",
+      "photo": "/images/1.jpg",
       "description": "Comprehensive roof replacement services to ensure durability and weather resistance."
     },
     {
       "id": 2,
       "name": "Window Replacement",
       "type": "outdoor",
-      "photo": "url/to/window-replacement-photo.jpg",
+      "photo": "/images/2.jpg",
       "description": "Energy-efficient window replacement to improve insulation and reduce energy costs."
     },
     {
       "id": 3,
       "name": "Foundation Repair",
       "type": "outdoor",
-      "photo": "url/to/foundation-repair-photo.jpg",
+      "photo": "/images/3.jpg",
       "description": "Professional foundation repair services to stabilize and secure your home."
     },
     {
       "id": 4,
       "name": "Crawl Space Repair",
       "type": "outdoor",
-      "photo": "url/to/crawl-space-repair-photo.jpg",
+      "photo": "/images/4.jpg",
       "description": "Crawl space repair solutions to enhance structural integrity and prevent moisture issues."
     },
     {
       "id": 5,
       "name": "Fence",
       "type": "outdoor",
-      "photo": "url/to/fence-photo.jpg",
+      "photo": "/images/5.jpg",
       "description": "High-quality fencing services for privacy and protection around your property."
     },
     {
       "id": 6,
       "name": "Deck",
       "type": "outdoor",
-      "photo": "url/to/deck-photo.jpg",
+      "photo": "/images/6.jpg",
       "description": "Custom deck construction to extend your living space into the outdoors."
     },
     {
       "id": 7,
       "name": "Shower Conversion",
       "type": "indoor",
-      "photo": "url/to/shower-conversion-photo.jpg",
+      "photo": "/images/7.jpg",
       "description": "Transform your bathroom with modern shower conversion solutions."
     },
     {
       "id": 8,
       "name": "Tub Conversion",
       "type": "indoor",
-      "photo": "url/to/tub-conversion-photo.jpg",
+      "photo": "/images/8.jpg",
       "description": "Convert existing tubs to enhance usability and update your bathroom's style."
     },
     {
       "id": 9,
       "name": "Walk-in Tub",
       "type": "indoor",
-      "photo": "url/to/walk-in-tub-photo.jpg",
+      "photo": "/images/9.jpg",
       "description": "Walk-in tubs for safety, accessibility, and relaxation in your bathroom."
     },
     {
       "id": 10,
       "name": "Kitchen Refacing",
       "type": "indoor",
-      "photo": "url/to/kitchen-refacing-photo.jpg",
+      "photo": "/images/10.jpg",
       "description": "Give your kitchen a new look with our professional refacing services."
     },
     {
       "id": 11,
       "name": "Basement Waterproofing",
       "type": "indoor",
-      "photo": "url/to/basement-waterproofing-photo.jpg",
+      "photo": "/images/11.jpg",
       "description": "Prevent leaks and water damage with expert basement waterproofing solutions."
     }
   ],

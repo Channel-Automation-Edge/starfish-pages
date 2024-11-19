@@ -2,10 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup'; // Import Yup for validation
 import { AppContext } from '../../context/AppContext';
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "../ui/button";
-import { set } from 'react-hook-form';
 
 // A simple area code selector component
 const AreaCodeSelector = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => {

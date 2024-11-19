@@ -2,13 +2,13 @@ import React, { createContext, useState, useEffect, ReactNode, Dispatch, SetStat
 
 // Define the Contractor interface
 interface Contractor {
-  id: number; // or string, depending on your ID type
+  id: number;
   name: string;
   address: string;
   zip: string;
   state: string;
   services: number[];
-  matchingServices: number[]; // array of service IDs
+  matchingServices: number[];
 }
 
 // Define the shape of your context data
@@ -42,6 +42,14 @@ interface AppContextProviderProps {
   children: ReactNode;
 }
 
+// Function to capitalize the first letter of a string
+const capitalizeFirstLetter = (str: string | null): string | null => {
+  if (str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  return str;
+};
+
 // Create the provider component
 const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => {
   const [firstname, setFirstname] = useState<string | null>(null);
@@ -57,8 +65,8 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => 
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setFirstname(params.get('firstname') || null);
-    setLastname(params.get('lastname') || null);
+    setFirstname(capitalizeFirstLetter(params.get('firstname')));
+    setLastname(capitalizeFirstLetter(params.get('lastname')));
     setZip(params.get('zip') || null);
     setEmail(params.get('email') || null);
     setPhone(params.get('phone') || null);

@@ -1,8 +1,9 @@
 "use client";
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import servicesData from '../assets/assets.json';
+// import servicesData from '../assets/assets.json';
 import { AppContext } from '../context/AppContext';
+import Searchbox from './Searchbox';
 
 const Search: React.FC = () => {
     const navigate = useNavigate();
@@ -12,15 +13,7 @@ const Search: React.FC = () => {
         return null; // Handle the case where appContext is not available
     }
 
-    const { initialService, setInitialService, setSelectedServices } = appContext;
-
-    useEffect(() => {
-        console.log('Updated Initial Service:', initialService);
-    }, [initialService]);
-
-    const handleSelectChange = (value: string) => {
-        setInitialService(Number(value)); // Convert the value to a number
-    };
+    const { initialService, setSelectedServices } = appContext;
 
     const handleButtonClick = () => {
         // Reset selected services before navigation
@@ -30,7 +23,7 @@ const Search: React.FC = () => {
     };
   return (
     <div className="relative overflow-hidden">
-      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-[80px] pb-[180px]">
+      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-[50px] pb-[280px]">
         <div className="text-center">
           <h2 className="text-2xl font-bold md:text-3xl text-gray-800 dark:text-neutral-200">Your Project, Your Price – Request a Quote</h2>
           <p className="mt-3 text-gray-600 dark:text-neutral-400">
@@ -47,13 +40,7 @@ const Search: React.FC = () => {
                   >
                     <span className="sr-only">Select a service</span>
                   </label>
-                  <input
-                    type="email"
-                    name="hs-search-article-1"
-                    id="hs-search-article-1"
-                    className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-secondary focus:ring-secondary dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="Select a service"
-                  />
+                  <Searchbox />
                 </div>
                 <div>
                   <a
