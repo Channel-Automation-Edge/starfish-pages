@@ -17,7 +17,7 @@ export default {
   			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				foreground: 'hhttp://localhost:5173/formpagesl(var(--primary-foreground))'
   			},
   			secondary: {
   				DEFAULT: '#00C9B7',

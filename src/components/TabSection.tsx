@@ -8,7 +8,7 @@ const TabSection: React.FC = () => {
         <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
           <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
             <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-neutral-200">
-            Here’s What You’ll Gain
+              Here’s What You’ll Gain
             </h2>
 
             {/* Tab Navs */}
@@ -43,10 +43,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Tailored estimates
+                      Tailored estimates
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Receive personalized, detailed estimates that match the unique needs of your project
+                      Receive personalized, detailed estimates that match the unique needs of your project
                     </span>
                   </span>
                 </span>
@@ -79,10 +79,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Trusted professionals
+                      Trusted professionals
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Work with experienced and reliable experts
+                      Work with experienced and reliable experts
                     </span>
                   </span>
                 </span>
@@ -118,10 +118,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Transparent pricing
+                      Transparent pricing
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Get clear, upfront pricing with no hidden fees or surprises.
+                      Get clear, upfront pricing with no hidden fees or surprises.
                     </span>
                   </span>
                 </span>
@@ -137,23 +137,23 @@ const TabSection: React.FC = () => {
               <div>
                 <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
                   <img
-                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                    src="/images/2.jpg"
+                    className="w-full h-[500px] object-cover shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    src="/images/tab1.jpg"
                     alt="Features Image"
                   />
                 </div>
 
                 <div id="tabs-with-card-2" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
                   <img
-                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                    src="/images/5.jpg"
+                    className="w-full h-[500px] object-cover shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    src="/images/tab2.jpg"
                     alt="Features Image"
                   />
                 </div>
-
                 <div id="tabs-with-card-3" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
                   <img
-                    src="/images/11.jpg"
+                    className="w-full h-[500px] object-cover shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    src="/images/tab3.jpg"
                     alt="Features Image"
                   />
                 </div>

@@ -82,13 +82,13 @@ const Step2: React.FC<Step2Props> = ({ onNext }) => {
   });
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"> 
-  <div className="mx-auto max-w-lg">
+   <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"> 
+    <div className="mx-auto max-w-lg">
     <h1 className="text-center text-2xl font-bold text-primary
-     sm:text-3xl"></h1>
+      sm:text-3xl"></h1>
 
 
-<form onSubmit={formik.handleSubmit} className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+    <form onSubmit={formik.handleSubmit} className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
       <p className="text-center text-lg font-medium">Fill up your information</p>
 
 
@@ -228,8 +228,9 @@ const Step2: React.FC<Step2Props> = ({ onNext }) => {
       </button>
 
     </form>
-  </div>
-</div>
+    </div>
+    </div>
+
   );
 };
 

@@ -3,6 +3,8 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import { AppContext } from '../../context/AppContext'; // Ensure this import is correct based on your file structure
+// import DotPattern from '../ui/dot-pattern';
+// import { cn } from '@/lib/utils';
 
 const MultiStepForm = () => {
   const appContext = useContext(AppContext);
@@ -36,7 +38,14 @@ const MultiStepForm = () => {
       {currentStep === 1 && <Step1 onNext={handleNextStep} />}
       {currentStep === 2 && <Step2 onNext={handleNextStep} />}
       {currentStep === 3 && <Step3 onRestart={handleRestart} onHome={handleHome} />}
+      {/* <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+          )}
+        /> */}
+      
     </div>
+    
   );
 };
 

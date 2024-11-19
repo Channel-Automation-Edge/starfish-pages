@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import contractorsData from '../../assets/assets.json'; // Import contractors data
-import { Button } from "../ui/button";
+import servicesData from '../../assets/assets.json'; // Import services data
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"; // Import Dialog from shadcn
 
 interface Step3Props {
@@ -85,44 +85,73 @@ const Step3: React.FC<Step3Props> = ({ onRestart, onHome }) => {
   };
 
   return (
-    <div>
-      {loading ? (
-        <p>Looking for matches...</p>
-      ) : (
-        <>
-          {matchingContractors.length > 0 ? (
-            <>
-              <p>We found matches for your selected services:</p>
-              {selectedServices.map((serviceId) => (
-                <div key={serviceId} className="flex justify-between items-center p-4 border-b">
-                  <span>{serviceId}</span>
-                </div>
-              ))}
-              <Button onClick={handleViewMatches}>View matches</Button>
-            </>
+    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-lg">
+        <h1 className="text-center text-2xl font-bold text-primary sm:text-3xl">
+          We found matches for your selected services:
+        </h1>
+        <div className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+          {loading ? (
+            <p className="text-center text-lg font-medium">Looking for matches...</p>
           ) : (
             <>
-              <p>We found no matches for your selected services:</p>
-              {selectedServices.map((serviceId) => (
-                <div key={serviceId} className="flex justify-between items-center p-4 border-b">
-                  <span>{serviceId}</span>
-                </div>
-              ))}
-              <Button onClick={handleSelectDifferentServices}>Select different service/s</Button>
-              <Dialog open={showDialog} onOpenChange={setShowDialog}>
-                <DialogTrigger asChild>
-                  <Button>Back to Home</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <p>You will be going back to the landing page/homepage and your progress will not be saved.</p>
-                  <Button onClick={() => setShowDialog(false)}>Cancel</Button>
-                  <Button onClick={handleDialogContinue}>Continue</Button>
-                </DialogContent>
-              </Dialog>
+              {matchingContractors.length > 0 ? (
+                <>
+                  <p className="text-center text-lg font-medium">We found matches for your selected services:</p>
+                  {selectedServices.map((serviceId) => {
+                    const service = servicesData.services.find((s: any) => s.id === serviceId);
+                    return (
+                      <div key={serviceId} className="flex justify-between items-center p-4 border-b">
+                        <span>{service ? service.name : "Service not found"}</span>
+                      </div>
+                    );
+                  })}
+                  <button
+                    onClick={handleViewMatches}
+                    className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+                  >
+                    View matches
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p>We found no matches for your selected services:</p>
+                  {selectedServices.map((serviceId) => {
+                    const service = servicesData.services.find((s: any) => s.id === serviceId);
+                    return (
+                      <div key={serviceId} className="flex justify-between items-center p-4 border-b">
+                        <span>{service ? service.name : "Service not found"}</span>
+                      </div>
+                    );
+                  })}
+
+                  <div className="flex justify-between">
+                    <button
+                      onClick={handleSelectDifferentServices}
+                      className="block w-[45%] rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+                    >
+                      Select different service/s
+                    </button>
+
+                    <Dialog open={showDialog} onOpenChange={setShowDialog}>
+                      <DialogTrigger asChild>
+                        <button className="block w-[45%] rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white">
+                          Back to Home
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <p>You will be going back to the landing page/homepage and your progress will not be saved.</p>
+                        <button onClick={() => setShowDialog(false)}>Cancel</button>
+                        <button onClick={handleDialogContinue}>Continue</button>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </>
+              )}
             </>
           )}
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 };
