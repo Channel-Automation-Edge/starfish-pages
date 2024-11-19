@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 // import servicesData from '../assets/assets.json';
 import { AppContext } from '../context/AppContext';
 import Searchbox from './Searchbox';
+import DotPattern from './ui/dot-pattern';
+import { cn } from "@/lib/utils";
+
 
 const Search: React.FC = () => {
     const navigate = useNavigate();
@@ -23,6 +26,12 @@ const Search: React.FC = () => {
     };
   return (
     <div className="relative overflow-hidden">
+      <DotPattern
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+        )}
+      />
+
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-[50px] pb-[280px]">
         <div className="text-center">
           <h2 className="text-2xl font-bold md:text-3xl text-gray-800 dark:text-neutral-200">Your Project, Your Price – Request a Quote</h2>

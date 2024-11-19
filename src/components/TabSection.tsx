@@ -43,10 +43,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Trusted professionals
+                    Tailored estimates
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Work with experienced and reliable experts
+                    Receive personalized, detailed estimates that match the unique needs of your project
                     </span>
                   </span>
                 </span>
@@ -79,10 +79,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Transparent pricing
+                    Trusted professionals
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Get clear, upfront pricing with no hidden fees or surprises.
+                    Work with experienced and reliable experts
                     </span>
                   </span>
                 </span>
@@ -118,10 +118,10 @@ const TabSection: React.FC = () => {
                   </svg>
                   <span className="grow">
                     <span className="block text-lg font-semibold hs-tab-active:text-secondary text-gray-800 dark:hs-tab-active:text-secondary dark:text-neutral-200">
-                    Tailored estimates
+                    Transparent pricing
                     </span>
                     <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                    Receive personalized, detailed estimates that match the unique needs of your project
+                    Get clear, upfront pricing with no hidden fees or surprises.
                     </span>
                   </span>
                 </span>
@@ -138,7 +138,7 @@ const TabSection: React.FC = () => {
                 <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
                   <img
                     className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                    src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                    src="/images/2.jpg"
                     alt="Features Image"
                   />
                 </div>
@@ -146,15 +146,14 @@ const TabSection: React.FC = () => {
                 <div id="tabs-with-card-2" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
                   <img
                     className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                    src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                    src="/images/5.jpg"
                     alt="Features Image"
                   />
                 </div>
 
                 <div id="tabs-with-card-3" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
                   <img
-                    className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
-                    src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&h=720&q=80"
+                    src="/images/11.jpg"
                     alt="Features Image"
                   />
                 </div>
