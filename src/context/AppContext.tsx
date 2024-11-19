@@ -5,6 +5,7 @@ interface Contractor {
   id: number;
   name: string;
   address: string;
+  photo: string;
   zip: string;
   state: string;
   services: number[];

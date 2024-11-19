@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
-import contractorsData from '../../assets/assets.json'; // Import contractors data
-import servicesData from '../../assets/assets.json'; // Import services data
+import contractorsData from '../../assets/assets.json'; 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"; // Import Dialog from shadcn
 
 interface Step3Props {
@@ -46,6 +45,7 @@ const Step3: React.FC<Step3Props> = ({ onRestart, onHome }) => {
           acc.push({
             ...contractor,
             matchingServices: tempMatches,
+            photo: contractor.photo, // Include the photo property
           });
         } else {
           console.log("No matching services for contractor ID:", contractor.id);
@@ -87,9 +87,6 @@ const Step3: React.FC<Step3Props> = ({ onRestart, onHome }) => {
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
-        <h1 className="text-center text-2xl font-bold text-primary sm:text-3xl">
-          We found matches for your selected services:
-        </h1>
         <div className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
           {loading ? (
             <p className="text-center text-lg font-medium">Looking for matches...</p>
@@ -97,45 +94,40 @@ const Step3: React.FC<Step3Props> = ({ onRestart, onHome }) => {
             <>
               {matchingContractors.length > 0 ? (
                 <>
-                  <p className="text-center text-lg font-medium">We found matches for your selected services:</p>
-                  {selectedServices.map((serviceId) => {
-                    const service = servicesData.services.find((s: any) => s.id === serviceId);
-                    return (
-                      <div key={serviceId} className="flex justify-between items-center p-4 border-b">
-                        <span>{service ? service.name : "Service not found"}</span>
-                      </div>
-                    );
-                  })}
+                  <h1 className="block text-2xl font-bold text-primary dark:text-white text-center">Local Experts Found!</h1>
+                  <p className="mt-2 text- text-gray-800 dark:text-neutral-400 text-center">
+                  We’ve identified skilled local experts who are perfectly suited to complete your selected projects. 
+  
+                  </p>
+                  
+                  <p className="mt-2 pt-3 text-s text-gray-600 dark:text-neutral-400 text-center">
+                  Click the button below to explore your options
+                  </p>
                   <button
                     onClick={handleViewMatches}
-                    className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+                    className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   >
                     View matches
                   </button>
                 </>
               ) : (
                 <>
-                  <p>We found no matches for your selected services:</p>
-                  {selectedServices.map((serviceId) => {
-                    const service = servicesData.services.find((s: any) => s.id === serviceId);
-                    return (
-                      <div key={serviceId} className="flex justify-between items-center p-4 border-b">
-                        <span>{service ? service.name : "Service not found"}</span>
-                      </div>
-                    );
-                  })}
+                  <h1 className="block text-2xl font-bold text-primary dark:text-white text-center">Oh no...</h1>
+                  <p className="mt-2 text- text-gray-800 dark:text-neutral-400 text-center">
+                  We couldn't find any local experts who match your selected services in your area.
+                  </p>
 
-                  <div className="flex justify-between">
+                  <div className="space-y-2">
                     <button
                       onClick={handleSelectDifferentServices}
-                      className="block w-[45%] rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
+                      className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                     >
                       Select different service/s
                     </button>
 
                     <Dialog open={showDialog} onOpenChange={setShowDialog}>
                       <DialogTrigger asChild>
-                        <button className="block w-[45%] rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white">
+                        <button className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
                           Back to Home
                         </button>
                       </DialogTrigger>

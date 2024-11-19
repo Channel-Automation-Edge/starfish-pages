@@ -94,6 +94,7 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate"),require('preline/plugin')],
+  plugins: [require("tailwindcss-animate"),require('preline/plugin'),require('@tailwindcss/forms'),
+  ],
 }
 
